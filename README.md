@@ -27,7 +27,7 @@ Landing page profissional para Kinga Conesa — Personal Trainer e Nutricionista
 | **Hero** | Foto centro + 2 CTAs (Entrenamiento, Nutrición) |
 | **Entrenamiento** | Visão, galeria, testimonials |
 | **Nutrición** | Visão, galeria, testimonials |
-| **Tarifas** | 3 planos: Solo Entreno (25€), Pack (50€), Solo Nutrición (40€) |
+| **Tarifas** | 3 planos: Solo Entreno (30€), Pack (60€), Solo Nutrición (40€) |
 | **Sobre mí** | Bio, stats, espaço para vídeo |
 | **CTA** | Chamada à ação principal |
 | **Contacto** | Formulário + links (WhatsApp, email, redes sociais) |
