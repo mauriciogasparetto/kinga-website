@@ -1,0 +1,1611 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Kinga — Personal Trainer y Nutricionista online. Planes personalizados de entrenamiento y nutrición desde 25€/mes."/>
+  <meta name="keywords" content="personal trainer online, nutricionista online, entrenamiento personalizado, planes nutrición"/>
+  <meta name="author" content="Kinga Conesa"/>
+  <meta name="theme-color" content="#c56b48"/>
+  <title>Kinga · Personal Trainer &amp; Nutricionista Online</title>
+
+  <!-- IMPORTANTE: substituir o domínio abaixo pelo definitivo após o deploy. -->
+  <link rel="canonical" href="https://kinga-website.vercel.app/"/>
+
+  <!-- Open Graph (partilha em WhatsApp, Facebook, Instagram, LinkedIn) -->
+  <meta property="og:site_name" content="Kinga Conesa"/>
+  <meta property="og:title" content="Kinga · Personal Trainer & Nutricionista Online"/>
+  <meta property="og:description" content="Planes personalizados de entrenamiento y nutrición. Desde 25€/mes. 100% online."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:locale" content="es_ES"/>
+  <meta property="og:url" content="https://kinga-website.vercel.app/"/>
+  <meta property="og:image" content="https://kinga-website.vercel.app/fotos/kinga-hero.jpg"/>
+  <meta property="og:image:alt" content="Kinga — Personal Trainer y Nutricionista Online"/>
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Kinga · Personal Trainer & Nutricionista Online"/>
+  <meta name="twitter:description" content="Planes personalizados de entrenamiento y nutrición. Desde 25€/mes. 100% online."/>
+  <meta name="twitter:image" content="https://kinga-website.vercel.app/fotos/kinga-hero.jpg"/>
+
+  <!-- Ícones -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+  <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400&display=swap" rel="stylesheet"/>
+
+  <!-- Dados estruturados (Schema.org) para SEO / rich results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HealthAndBeautyBusiness",
+    "name": "Kinga Conesa · Personal Trainer & Nutricionista Online",
+    "description": "Personal trainer y nutricionista. Planes personalizados de entrenamiento y nutrición 100% online desde 25€/mes.",
+    "image": "https://kinga-website.vercel.app/fotos/kinga-hero.jpg",
+    "url": "https://kinga-website.vercel.app/",
+    "telephone": "+34618915226",
+    "email": "lauraconesam1@gmail.com",
+    "priceRange": "25€ - 50€",
+    "areaServed": "ES",
+    "availableLanguage": "es",
+    "sameAs": [
+      "https://instagram.com/kingaconesa",
+      "https://tiktok.com/@kingaconesa"
+    ],
+    "founder": {
+      "@type": "Person",
+      "name": "Kinga Conesa",
+      "jobTitle": "Personal Trainer y Nutricionista"
+    },
+    "makesOffer": [
+      {
+        "@type": "Offer",
+        "name": "Solo Entrenamiento",
+        "price": "25",
+        "priceCurrency": "EUR",
+        "description": "Plan de entrenamiento personalizado · 25€/mes"
+      },
+      {
+        "@type": "Offer",
+        "name": "Pack Completo (Entrenamiento + Nutrición)",
+        "price": "50",
+        "priceCurrency": "EUR",
+        "description": "Entrenamiento y nutrición personalizados · 50€/mes"
+      },
+      {
+        "@type": "Offer",
+        "name": "Solo Nutrición",
+        "price": "40",
+        "priceCurrency": "EUR",
+        "description": "Plan de nutrición personalizado · 40€/mes"
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      /* Paleta quente (pêssego / coral / creme + verde folha) — inspirada no modelo */
+      --color-rose:        #c56b48;   /* terracota-coral — acento principal */
+      --color-rose-mid:    #e3a07c;   /* coral suave */
+      --color-rose-soft:   #f1cdb3;   /* pêssego */
+      --color-rose-pale:   #fcefe6;   /* pêssego claro */
+      --color-blush:       #fbe2d4;   /* blush quente (fundo) */
+      --color-cream:       #fdf6f0;   /* creme quente */
+      --color-dark:        #3d2b24;   /* castanho escuro (texto) */
+      --color-mid:         #6b4f44;   /* castanho médio */
+      --color-muted:       #9a7a6b;   /* castanho suave */
+      --color-white:       #ffffff;
+      --font-serif:        'Cormorant Garamond', Georgia, serif;
+      --font-sans:         'Jost', system-ui, sans-serif;
+      --radius-card:       4px;
+      --radius-photo:      16px;
+      --space-xs:          0.5rem;
+      --space-sm:          1rem;
+      --space-md:          2rem;
+      --space-lg:          4rem;
+      --space-xl:          6rem;
+      --transition-base:   0.3s ease;
+      --transition-smooth: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      --container-max:     1200px;
+      --section-pad:       5rem 8vw;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; font-size: 16px; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--color-cream);
+      color: var(--color-dark);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    button { font-family: inherit; }
+
+    /* ═══════════════════════════════════════════
+       NAV
+    ═══════════════════════════════════════════ */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 4vw;
+      transition: background var(--transition-base), box-shadow var(--transition-base);
+    }
+    .nav--scrolled {
+      background: rgba(253,248,245,0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 rgba(197,107,72,0.15);
+    }
+    .nav__logo {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      color: var(--color-dark);
+      text-decoration: none;
+    }
+    .nav__logo span { color: var(--color-rose); }
+    .nav__list {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .nav__link {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-mid);
+      text-decoration: none;
+      transition: color var(--transition-base);
+      padding: 0.3rem 0;
+      position: relative;
+    }
+    .nav__link::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 1px;
+      background: var(--color-rose);
+      transition: width var(--transition-base);
+    }
+    .nav__link:hover { color: var(--color-rose); }
+    .nav__link:hover::after { width: 100%; }
+    .nav__link:focus-visible {
+      outline: 2px solid var(--color-rose);
+      outline-offset: 4px;
+      border-radius: 2px;
+    }
+
+    .nav__toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.3rem;
+    }
+    .nav__toggle span {
+      display: block;
+      width: 24px; height: 1.5px;
+      background: var(--color-dark);
+      transition: transform var(--transition-base), opacity var(--transition-base);
+    }
+    .nav__toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav__toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav__toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    /* ═══════════════════════════════════════════
+       HERO — Foto com degradê + folhas + cards flutuantes
+    ═══════════════════════════════════════════ */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      padding: 7rem 6vw 7rem;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    /* Fundo quente que esvanece (fade) no creme */
+    .hero__backdrop {
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      pointer-events: none;
+      background:
+        radial-gradient(125% 80% at 78% 8%, var(--color-blush)    0%, rgba(251,226,212,0) 55%),
+        radial-gradient(90% 70% at 8% 92%,  var(--color-rose-pale) 0%, rgba(252,239,230,0) 60%),
+        linear-gradient(180deg, var(--color-rose-pale) 0%, var(--color-cream) 100%);
+    }
+    .hero__backdrop::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 34%;
+      background: linear-gradient(to bottom, rgba(253,246,240,0), var(--color-cream));
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 6vw, 5rem);
+      align-items: center;
+      max-width: var(--container-max);
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .hero__text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+    }
+    .hero__name {
+      font-family: var(--font-serif);
+      font-size: 0.9rem;
+      font-weight: 300;
+      letter-spacing: 0.55em;
+      text-transform: uppercase;
+      color: var(--color-rose);
+      margin-bottom: 1.4rem;
+    }
+    .hero__title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.3rem, 4.8vw, 3.9rem);
+      font-weight: 300;
+      color: var(--color-dark);
+      margin-bottom: 1rem;
+      line-height: 1.12;
+    }
+    .hero__title-accent { color: var(--color-rose); font-style: italic; }
+    .hero__subtitle {
+      font-size: 0.85rem;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: var(--color-muted);
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+
+    /* CTAs */
+    .hero__ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .hero__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 1rem 1.9rem;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform var(--transition-smooth), box-shadow var(--transition-base),
+                  border-color var(--transition-base), background var(--transition-base),
+                  color var(--transition-base);
+    }
+    .hero__cta--primary {
+      background: linear-gradient(135deg, var(--color-rose-soft), var(--color-rose-mid));
+      color: var(--color-dark);
+      border: 1px solid transparent;
+      box-shadow: 0 14px 30px -12px rgba(197,107,72,0.6);
+    }
+    .hero__cta--primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 42px -14px rgba(197,107,72,0.7);
+    }
+    .hero__cta--ghost {
+      background: linear-gradient(135deg, var(--color-rose-soft), var(--color-rose-mid));
+      color: var(--color-dark);
+      border: 1px solid transparent;
+      box-shadow: 0 14px 30px -12px rgba(197,107,72,0.6);
+    }
+    .hero__cta--ghost:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 42px -14px rgba(197,107,72,0.7);
+    }
+    .hero__cta:focus-visible {
+      outline: 2px solid var(--color-rose);
+      outline-offset: 3px;
+    }
+
+    /* Coluna visual: foto dentro da figura orgânica */
+    .hero__visual {
+      position: relative;
+      justify-self: center;
+      width: min(440px, 92vw);
+      aspect-ratio: 1 / 1.12;
+      /* Figura geométrica orgânica (blob/pétala) com o degradê do fundo */
+      background: linear-gradient(158deg, var(--color-rose-soft) 0%, var(--color-rose-mid) 100%);
+      border-radius: 52% 48% 48% 16% / 56% 60% 44% 28%;
+      overflow: hidden;
+    }
+    /* Foto da Kinga: funde-se na figura por todo o contorno (degradê bem suave) */
+    .hero__photo-wrap {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+    .hero__photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      /* Esbate o fundo do estúdio em todas as bordas, derretendo no degradê da figura
+         (degradê inferior ~30% mais suave para mostrar melhor as pernas) */
+      -webkit-mask-image: radial-gradient(118% 86% at 50% 30%, #000 47%, rgba(0,0,0,0) 97%);
+              mask-image: radial-gradient(118% 86% at 50% 30%, #000 47%, rgba(0,0,0,0) 97%);
+    }
+
+    /* ═══════════════════════════════════════════
+       EXPANDABLE SECTIONS
+    ═══════════════════════════════════════════ */
+    .section-expand {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 1.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+      opacity: 0;
+      background: var(--color-white);
+    }
+    .section-expand--open {
+      opacity: 1;
+    }
+    .section-expand__inner {
+      padding: var(--section-pad);
+      max-width: var(--container-max);
+      margin: 0 auto;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+    .section-header__title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3.5vw, 3.5rem);
+      font-weight: 300;
+      color: var(--color-dark);
+      white-space: nowrap;
+    }
+    .section-header__line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, var(--color-rose-soft), transparent);
+      min-width: 20px;
+    }
+    .btn-close {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.65rem 1.3rem;
+      border-radius: 999px;
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: pointer;
+      white-space: nowrap;
+      color: var(--color-dark);
+      background: linear-gradient(135deg, var(--color-rose-soft), var(--color-rose-mid));
+      border: 1px solid transparent;
+      box-shadow: 0 14px 30px -12px rgba(197,107,72,0.6);
+      transition: transform var(--transition-smooth), box-shadow var(--transition-base), background var(--transition-base);
+    }
+    .btn-close:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 42px -14px rgba(197,107,72,0.7);
+    }
+    .btn-close:focus-visible {
+      outline: 2px solid var(--color-rose);
+      outline-offset: 3px;
+    }
+
+    /* ═══════════════════════════════════════════
+       VISION BLOCKS
+    ═══════════════════════════════════════════ */
+    .vision {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+      margin-bottom: 4rem;
+      padding-bottom: 4rem;
+      border-bottom: 1px solid var(--color-rose-soft);
+    }
+    .vision__items { display: flex; flex-direction: column; gap: 2.5rem; }
+    .vision__num {
+      font-family: var(--font-serif);
+      font-size: 4rem;
+      font-weight: 300;
+      color: var(--color-rose-soft);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .vision__title {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--color-dark);
+      margin-bottom: 0.5rem;
+    }
+    .vision__text {
+      font-size: 0.87rem;
+      font-weight: 300;
+      color: var(--color-mid);
+      line-height: 1.9;
+    }
+    .vision__quote-wrap {
+      position: sticky;
+      top: 120px;
+    }
+    .vision__quote {
+      font-family: var(--font-serif);
+      font-size: clamp(1.4rem, 2vw, 1.8rem);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--color-rose);
+      line-height: 1.5;
+      padding-left: 2rem;
+      border-left: 2px solid var(--color-rose-soft);
+      margin-bottom: 1rem;
+    }
+    .vision__cite {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+      padding-left: 2rem;
+    }
+
+    /* ═══════════════════════════════════════════
+       GALLERY
+    ═══════════════════════════════════════════ */
+    .gallery-title {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--color-mid);
+      margin-bottom: 1.2rem;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 0.8rem;
+      margin-bottom: 4rem;
+    }
+    .gallery__item {
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      border-radius: 20px;
+    }
+    .gallery__img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform var(--transition-smooth);
+    }
+    .gallery__item:hover .gallery__img { transform: scale(1.06); }
+
+    /* ═══════════════════════════════════════════
+       TESTIMONIALS
+    ═══════════════════════════════════════════ */
+    .testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .testimonial {
+      padding: 2rem;
+      background: var(--color-cream);
+      border-left: 2px solid var(--color-rose-soft);
+      position: relative;
+      border-radius: 0 var(--radius-card) var(--radius-card) 0;
+    }
+    .testimonial::before {
+      content: '\201C';
+      font-family: var(--font-serif);
+      font-size: 4rem;
+      color: var(--color-rose-soft);
+      position: absolute;
+      top: 0.3rem; left: 1rem;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .testimonial__text {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--color-mid);
+      line-height: 1.7;
+      padding-top: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    .testimonial__author {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-rose);
+    }
+
+    /* ═══════════════════════════════════════════
+       TARIFAS
+    ═══════════════════════════════════════════ */
+    .tarifas {
+      padding: var(--section-pad);
+      background: var(--color-white);
+      border-top: 1px solid var(--color-rose-soft);
+    }
+    .tarifas__head {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .tarifas__head h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 300;
+      color: var(--color-dark);
+      margin-bottom: 0.5rem;
+    }
+    .tarifas__head p {
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+    }
+    .tarifas__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto 2rem;
+    }
+    .tarifa-card {
+      border: 1px solid var(--color-rose-soft);
+      padding: 2.5rem 1.8rem;
+      text-align: center;
+      background: var(--color-white);
+      position: relative;
+      border-radius: var(--radius-card);
+      transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .tarifa-card--featured {
+      border-color: var(--color-rose);
+      background: var(--color-rose-pale);
+    }
+    .tarifa-card--featured::before {
+      content: 'MÁS POPULAR';
+      position: absolute;
+      top: -1px; left: 50%;
+      transform: translateX(-50%);
+      background: var(--color-rose);
+      color: var(--color-white);
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      padding: 0.25rem 1rem;
+      white-space: nowrap;
+      border-radius: 0 0 4px 4px;
+    }
+    .tarifa-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--color-rose);
+      box-shadow: 0 20px 50px rgba(197,107,72,0.15);
+    }
+    .tarifa-card__num {
+      font-family: var(--font-serif);
+      font-size: 0.75rem;
+      letter-spacing: 0.3em;
+      color: var(--color-rose-mid);
+      margin-bottom: 0.8rem;
+    }
+    .tarifa-card__name {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--color-dark);
+      margin-bottom: 0.5rem;
+    }
+    .tarifa-card__desc {
+      font-size: 0.75rem;
+      font-weight: 300;
+      color: var(--color-muted);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      flex: 1;
+    }
+    .tarifa-card__price {
+      font-family: var(--font-serif);
+      font-size: 3.8rem;
+      font-weight: 300;
+      color: var(--color-rose);
+      line-height: 1;
+    }
+    .tarifa-card__period {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+      margin-top: 0.2rem;
+      margin-bottom: 1.8rem;
+    }
+    .tarifa-card__cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      padding: 0.95rem 1.9rem;
+      border-radius: 999px;
+      font-family: var(--font-sans);
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--color-dark);
+      background: linear-gradient(135deg, var(--color-rose-soft), var(--color-rose-mid));
+      border: 1px solid transparent;
+      box-shadow: 0 14px 30px -12px rgba(197,107,72,0.6);
+      transition: transform var(--transition-smooth), box-shadow var(--transition-base), background var(--transition-base);
+    }
+    .tarifa-card__cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 42px -14px rgba(197,107,72,0.7);
+    }
+    .tarifa-card__cta:focus-visible {
+      outline: 2px solid var(--color-rose);
+      outline-offset: 3px;
+    }
+
+    .discount {
+      background: linear-gradient(135deg, var(--color-rose), #7a2040);
+      padding: 1.8rem 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: var(--radius-card);
+    }
+    .discount__icon { font-size: 2rem; flex-shrink: 0; }
+    .discount__title {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--color-white);
+      margin-bottom: 0.3rem;
+    }
+    .discount__text {
+      font-size: 0.8rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.6;
+    }
+    .discount__link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 0.8rem;
+      padding: 0.8rem 1.6rem;
+      border-radius: 999px;
+      font-family: var(--font-sans);
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      color: var(--color-dark);
+      background: linear-gradient(135deg, var(--color-rose-soft), var(--color-rose-mid));
+      border: 1px solid transparent;
+      box-shadow: 0 14px 30px -12px rgba(0,0,0,0.3);
+      transition: transform var(--transition-smooth), box-shadow var(--transition-base), background var(--transition-base);
+    }
+    .discount__link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 42px -14px rgba(0,0,0,0.38);
+    }
+
+    /* ═══════════════════════════════════════════
+       TESTIMONIOS (prova social visível)
+    ═══════════════════════════════════════════ */
+    .testimonios {
+      padding: var(--section-pad);
+      background: var(--color-white);
+      border-top: 1px solid var(--color-rose-soft);
+    }
+    .testimonios__inner {
+      max-width: var(--container-max);
+      margin: 0 auto;
+    }
+
+    /* ═══════════════════════════════════════════
+       SOBRE MÍ
+    ═══════════════════════════════════════════ */
+    .about {
+      padding: var(--section-pad);
+      background: var(--color-rose-pale);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .about__title {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.5vw, 3.2rem);
+      font-weight: 300;
+      color: var(--color-dark);
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+    .about__title em { font-style: italic; color: var(--color-rose); }
+    .about__text {
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: var(--color-mid);
+      line-height: 1.9;
+      margin-bottom: 1rem;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .stat {
+      text-align: center;
+      padding: 1.5rem;
+      background: var(--color-white);
+      border-top: 2px solid var(--color-rose-soft);
+      border-radius: 0 0 var(--radius-card) var(--radius-card);
+    }
+    .stat__number {
+      font-family: var(--font-serif);
+      font-size: 2.8rem;
+      font-weight: 300;
+      color: var(--color-rose);
+      line-height: 1;
+    }
+    .stat__label {
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+      margin-top: 0.3rem;
+    }
+
+    .media-wrap { position: relative; }
+    .media-photo {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      max-height: 520px;
+      object-fit: cover;
+      object-position: center 78%;
+      border-radius: var(--radius-photo);
+      box-shadow: 0 20px 60px rgba(197,107,72,0.15);
+    }
+
+    /* ═══════════════════════════════════════════
+       CTA
+    ═══════════════════════════════════════════ */
+    .cta {
+      padding: var(--section-pad);
+      background: var(--color-dark);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(197,107,72,0.2), transparent 70%);
+      border-radius: 50%;
+      top: -200px; left: 50%;
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+    .cta__title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 4vw, 3.2rem);
+      font-weight: 300;
+      color: var(--color-white);
+      margin-bottom: 0.8rem;
+      position: relative;
+    }
+    .cta__sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      color: var(--color-rose-soft);
+      margin-bottom: 2.2rem;
+      position: relative;
+      font-weight: 300;
+    }
+    .cta__buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+    }
+    .btn-primary, .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      padding: 1rem 2rem;
+      border-radius: 999px;
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--color-dark);
+      background: linear-gradient(135deg, var(--color-rose-soft), var(--color-rose-mid));
+      border: 1px solid transparent;
+      box-shadow: 0 14px 30px -12px rgba(0,0,0,0.35);
+      transition: transform var(--transition-smooth), box-shadow var(--transition-base), background var(--transition-base);
+    }
+    .btn-primary:hover, .btn-outline:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 42px -14px rgba(0,0,0,0.45);
+    }
+    .btn-primary:focus-visible, .btn-outline:focus-visible {
+      outline: 2px solid var(--color-rose-soft);
+      outline-offset: 3px;
+    }
+
+    /* ═══════════════════════════════════════════
+       CONTACT
+    ═══════════════════════════════════════════ */
+    .contact {
+      padding: var(--section-pad);
+      background: var(--color-white);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .contact__title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3vw, 3rem);
+      font-weight: 300;
+      color: var(--color-dark);
+      margin-bottom: 1rem;
+    }
+    .contact__intro {
+      font-size: 0.86rem;
+      font-weight: 300;
+      color: var(--color-mid);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+    .contact-links { display: flex; flex-direction: column; gap: 0.9rem; }
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      font-size: 0.8rem;
+      color: var(--color-mid);
+      text-decoration: none;
+      transition: color var(--transition-base);
+    }
+    .contact-link:hover { color: var(--color-rose); }
+    .contact-link__icon {
+      width: 36px; height: 36px;
+      border: 1px solid var(--color-rose-soft);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--color-mid);
+      transition: background var(--transition-base), border-color var(--transition-base), color var(--transition-base);
+    }
+    .contact-link:hover .contact-link__icon {
+      background: var(--color-rose);
+      border-color: var(--color-rose);
+      color: var(--color-white);
+    }
+    .contact__form { display: flex; flex-direction: column; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.3rem; }
+    .form-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+    }
+    .form-input, .form-textarea, .form-select {
+      width: 100%;
+      background: var(--color-cream);
+      border: 1px solid var(--color-rose-soft);
+      padding: 0.85rem 1.1rem;
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: var(--color-dark);
+      outline: none;
+      transition: border-color var(--transition-base);
+      border-radius: var(--radius-card);
+    }
+    .form-input:focus, .form-textarea:focus, .form-select:focus {
+      border-color: var(--color-rose);
+      box-shadow: 0 0 0 3px rgba(197,107,72,0.1);
+    }
+    .form-textarea { min-height: 120px; resize: vertical; }
+    .btn-submit {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      padding: 1rem 2rem;
+      border-radius: 999px;
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: pointer;
+      color: var(--color-dark);
+      background: linear-gradient(135deg, var(--color-rose-soft), var(--color-rose-mid));
+      border: 1px solid transparent;
+      box-shadow: 0 14px 30px -12px rgba(197,107,72,0.6);
+      align-self: flex-start;
+      transition: transform var(--transition-smooth), box-shadow var(--transition-base), background var(--transition-base);
+    }
+    .btn-submit:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 42px -14px rgba(197,107,72,0.7);
+    }
+    .btn-submit:focus-visible { outline: 2px solid var(--color-rose); outline-offset: 3px; }
+
+    /* ═══════════════════════════════════════════
+       WHATSAPP FLOAT
+    ═══════════════════════════════════════════ */
+    .wa-float {
+      position: fixed;
+      bottom: 2rem; right: 2rem;
+      z-index: 200;
+      width: 54px; height: 54px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      text-decoration: none;
+      animation: waFloat 3s ease-in-out infinite;
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+    }
+    .wa-float:hover {
+      animation: none;
+      transform: scale(1.12);
+      box-shadow: 0 6px 28px rgba(37,211,102,0.55);
+    }
+    .wa-float:focus-visible {
+      outline: 2px solid #25D366;
+      outline-offset: 4px;
+    }
+    .wa-float svg { width: 27px; height: 27px; fill: white; }
+
+    /* ═══════════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════════ */
+    .footer {
+      background: var(--color-dark);
+      padding: 2.5rem 4vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .footer__logo {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      color: var(--color-white);
+    }
+    .footer__logo span { color: var(--color-rose-mid); }
+    .footer__copy {
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.25);
+      letter-spacing: 0.08em;
+      text-align: center;
+    }
+    .footer__dev {
+      font-size: 0.62rem;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 0.1em;
+      font-family: var(--font-sans);
+    }
+    .footer__dev span { color: var(--color-rose-mid); }
+    .footer__socials { display: flex; gap: 0.8rem; }
+    .footer__social {
+      width: 32px; height: 32px;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      transition: border-color var(--transition-base), color var(--transition-base);
+    }
+    .footer__social:hover { border-color: var(--color-rose-mid); color: var(--color-rose-mid); }
+
+    /* ═══════════════════════════════════════════
+       ANIMATIONS
+    ═══════════════════════════════════════════ */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes waFloat {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-7px); }
+    }
+
+    /* ═══════════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════════ */
+
+    @media (max-width: 1024px) {
+      :root { --section-pad: 4rem 6vw; }
+      .tarifas__grid { grid-template-columns: 1fr 1fr; }
+      .vision { gap: 3rem; }
+      .about { gap: 3rem; }
+      .contact { gap: 3rem; }
+    }
+
+    @media (max-width: 767px) {
+      :root { --section-pad: 3rem 5vw; }
+
+      .nav { padding: 1rem 5vw; }
+      .nav__toggle { display: flex; }
+      .nav__list {
+        display: none;
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: rgba(253,248,245,0.98);
+        backdrop-filter: blur(12px);
+        flex-direction: column;
+        padding: 1.5rem 5vw;
+        gap: 1.2rem;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      }
+      .nav__list--open { display: flex; }
+
+      .hero { padding: 6rem 6vw 4rem; }
+      .hero__content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2.5rem;
+      }
+      .hero__text { align-items: center; text-align: center; order: 2; }
+      .hero__visual { order: 1; width: min(310px, 78vw); }
+      /* No mobile: CTAs logo abaixo do nome; subtítulo vira microcopy por baixo */
+      .hero__subtitle { order: 1; margin: 1.3rem 0 0; }
+      .hero__ctas {
+        justify-content: center;
+        width: 100%;
+      }
+      .hero__cta {
+        flex: 1;
+        min-width: 150px;
+        justify-content: center;
+      }
+
+      .vision { grid-template-columns: 1fr; gap: 2rem; }
+      .vision__quote-wrap { position: static; }
+      .gallery { grid-template-columns: repeat(2, 1fr); }
+      .tarifas__grid { grid-template-columns: 1fr; max-width: 360px; }
+      .about { grid-template-columns: 1fr; gap: 2.5rem; }
+      .contact { grid-template-columns: 1fr; gap: 2.5rem; }
+      .discount { flex-direction: column; text-align: center; }
+      .section-header__title { white-space: normal; }
+      .footer { flex-direction: column; align-items: center; text-align: center; }
+    }
+
+    @media (max-width: 380px) {
+      .hero__visual { width: 86vw; }
+      .hero__ctas { flex-direction: column; }
+      .tarifas__grid { max-width: 100%; }
+    }
+
+    .form-status {
+      margin-top: 0.75rem;
+      font-size: 0.8rem;
+      color: var(--color-rose);
+      min-height: 1.2em;
+    }
+
+    /* Respeita a preferência de movimento reduzido do utilizador (WCAG 2.3.3). */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav" role="navigation" aria-label="Navegación principal">
+  <a href="#top" class="nav__logo" aria-label="Kinga - Inicio">KIN<span>G</span>A</a>
+
+  <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navList" aria-label="Abrir menú">
+    <span></span><span></span><span></span>
+  </button>
+
+  <ul class="nav__list" id="navList" role="list">
+    <li><a class="nav__link" href="#train" onclick="openSec('train');closeMenu();return false" aria-controls="train" aria-expanded="false">Entrenamiento</a></li>
+    <li><a class="nav__link" href="#nutri" onclick="openSec('nutri');closeMenu();return false" aria-controls="nutri" aria-expanded="false">Nutrición</a></li>
+    <li><a class="nav__link" href="#sobre" onclick="closeMenu()">Sobre mí</a></li>
+    <li><a class="nav__link" href="#tarifas" onclick="closeMenu()">Tarifas</a></li>
+    <li><a class="nav__link" href="#contacto" onclick="closeMenu()">Contacto</a></li>
+  </ul>
+</nav>
+
+<!-- HERO — Foto com degradê + folhas + cards flutuantes -->
+<section class="hero" id="top" aria-label="Inicio">
+  <div class="hero__backdrop" aria-hidden="true"></div>
+
+  <div class="hero__content">
+    <div class="hero__text">
+      <p class="hero__name">KINGA</p>
+      <h1 class="hero__title">Personal Trainer &amp; <span class="hero__title-accent">Nutricionista</span></h1>
+      <p class="hero__subtitle">Planes 100% personalizados · Online · Sin compromisos</p>
+
+      <div class="hero__ctas">
+        <a class="hero__cta hero__cta--primary" href="#train" onclick="openSec('train');return false" aria-label="Ver información de Entrenamiento Personal" aria-controls="train" aria-expanded="false">
+          Entrenamiento
+        </a>
+        <a class="hero__cta hero__cta--ghost" href="#nutri" onclick="openSec('nutri');return false" aria-label="Ver información de Nutrición Personalizada" aria-controls="nutri" aria-expanded="false">
+          Nutrición
+        </a>
+      </div>
+    </div>
+
+    <div class="hero__visual">
+      <div class="hero__photo-wrap">
+        <img
+          class="hero__photo"
+          src="fotos/kinga-hero.jpg"
+          alt="Kinga — Personal Trainer y Nutricionista Online"
+          width="400" height="560"
+          fetchpriority="high"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENTRENAMIENTO -->
+<section class="section-expand" id="train" aria-label="Entrenamiento Personal" inert>
+  <div class="section-expand__inner">
+    <header class="section-header">
+      <h2 class="section-header__title">Entrenamiento Personal</h2>
+      <div class="section-header__line" aria-hidden="true"></div>
+      <button class="btn-close" onclick="closeSec('train')" aria-label="Cerrar sección">✕ Cerrar</button>
+    </header>
+
+    <div class="vision">
+      <div class="vision__items">
+        <div class="vision__item">
+          <p class="vision__num" aria-hidden="true">01</p>
+          <h3 class="vision__title">Mi enfoque</h3>
+          <p class="vision__text">Creo que entrenar bien no debería ser complicado, ni doloroso, ni imposible de mantener. Por eso cada plan que diseño está pensado para encajar en tu vida real: tu horario, tu nivel, tu punto de partida.</p>
+        </div>
+        <div class="vision__item">
+          <p class="vision__num" aria-hidden="true">02</p>
+          <h3 class="vision__title">Basado en evidencia</h3>
+          <p class="vision__text">Trabajo con metodología progresiva respaldada por la ciencia. Sin tendencias vacías, sin métodos extremos. Solo entrenamiento inteligente que construye resultados duraderos y una relación sana con el movimiento.</p>
+        </div>
+        <div class="vision__item">
+          <p class="vision__num" aria-hidden="true">03</p>
+          <h3 class="vision__title">Acompañamiento real</h3>
+          <p class="vision__text">No eres un número más. Estoy contigo en cada fase: ajustando, motivando y celebrando cada avance. Porque los resultados que duran se construyen con estrategia, consistencia y apoyo constante.</p>
+        </div>
+      </div>
+      <div class="vision__quote-wrap">
+        <blockquote class="vision__quote">
+          "El objetivo no es solo verte mejor. Es sentirte fuerte, con energía y en control de tus hábitos."
+        </blockquote>
+        <p class="vision__cite">— Kinga, Personal Trainer</p>
+      </div>
+    </div>
+
+    <h3 class="gallery-title">Galería · Entrenamiento</h3>
+    <div class="gallery" role="list">
+      <div class="gallery__item" role="listitem"><img class="gallery__img" src="fotos/entreno-1.jpg" alt="Kinga entrenando en el gimnasio" width="1161" height="1600" loading="lazy"/></div>
+      <div class="gallery__item" role="listitem"><img class="gallery__img" src="fotos/entreno-2.jpg" alt="Kinga realizando sentadillas" width="1258" height="1599" loading="lazy"/></div>
+      <div class="gallery__item" role="listitem"><img class="gallery__img" src="fotos/entreno-3.jpg" alt="Kinga en sesión de estudio" width="1066" height="1600" loading="lazy"/></div>
+      <div class="gallery__item" role="listitem"><img class="gallery__img" src="fotos/entreno-4.jpg" alt="Kinga mostrando resultados" width="1264" height="1600" loading="lazy"/></div>
+    </div>
+  </div>
+</section>
+
+<!-- NUTRICIÓN -->
+<section class="section-expand" id="nutri" aria-label="Nutrición Personalizada" inert>
+  <div class="section-expand__inner">
+    <header class="section-header">
+      <h2 class="section-header__title">Nutrición Personalizada</h2>
+      <div class="section-header__line" aria-hidden="true"></div>
+      <button class="btn-close" onclick="closeSec('nutri')" aria-label="Cerrar sección">✕ Cerrar</button>
+    </header>
+
+    <div class="vision">
+      <div class="vision__items">
+        <div class="vision__item">
+          <p class="vision__num" aria-hidden="true">01</p>
+          <h3 class="vision__title">Sin extremos</h3>
+          <p class="vision__text">Comer bien no significa pasar hambre ni renunciar a lo que te gusta. Mi enfoque se basa en construir hábitos alimenticios sostenibles que se adaptan a tu rutina, tus gustos y tu realidad cotidiana.</p>
+        </div>
+        <div class="vision__item">
+          <p class="vision__num" aria-hidden="true">02</p>
+          <h3 class="vision__title">Nutrición de precisión</h3>
+          <p class="vision__text">Cada plan nutricional está diseñado con base en evidencia científica y adaptado a tu metabolismo, objetivos y estilo de vida. Sin fórmulas genéricas. Solo estrategia nutricional que funciona y que puedes mantener.</p>
+        </div>
+        <div class="vision__item">
+          <p class="vision__num" aria-hidden="true">03</p>
+          <h3 class="vision__title">Resultados que duran</h3>
+          <p class="vision__text">No busco que llegues a un peso o una talla. Busco que entiendas tu cuerpo, que te sientas con energía, que disfrutes de la comida sin culpa y que construyas una relación saludable y duradera con la alimentación.</p>
+        </div>
+      </div>
+      <div class="vision__quote-wrap">
+        <blockquote class="vision__quote">
+          "Comer bien y entrenar no debería ser complicado. Solo necesitas la guía correcta y un plan hecho para ti."
+        </blockquote>
+        <p class="vision__cite">— Kinga, Nutricionista</p>
+      </div>
+    </div>
+
+    <h3 class="gallery-title">Galería · Nutrición</h3>
+    <div class="gallery" role="list">
+      <div class="gallery__item" role="listitem"><img class="gallery__img" src="fotos/nutri-1.jpg" alt="Desayuno saludable y nutritivo" width="600" height="408" loading="lazy"/></div>
+      <div class="gallery__item" role="listitem"><img class="gallery__img" src="fotos/nutri-2.jpg" alt="Verduras frescas y coloridas" width="600" height="400" loading="lazy"/></div>
+      <div class="gallery__item" role="listitem"><img class="gallery__img" src="fotos/nutri-3.jpg" alt="Meal prep semanal organizado" width="600" height="400" loading="lazy"/></div>
+      <div class="gallery__item" role="listitem"><img class="gallery__img" src="fotos/nutri-4.jpg" alt="Alimentación saludable lifestyle" width="600" height="400" loading="lazy"/></div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE MÍ -->
+<section class="about" id="sobre" aria-label="Sobre Kinga">
+  <div>
+    <h2 class="about__title">Hola, soy <em>Kinga</em></h2>
+    <p class="about__text">Acompaño a personas que quieren mejorar su salud, su físico y su rendimiento a través de la nutrición y el entrenamiento bien hechos, sin métodos imposibles de sostener.</p>
+    <p class="about__text">Trabajo con un enfoque personalizado y basado en evidencia, adaptando cada plan a tu estilo de vida, tus objetivos y tu punto de partida. El objetivo no es solo verte mejor, sino sentirte fuerte, con energía y en control de tus hábitos.</p>
+    <p class="about__text">Aquí encontrarás guía, estrategia y acompañamiento real para construir resultados duraderos y una relación saludable con la comida y el entrenamiento.</p>
+    <div class="stats" role="list">
+      <div class="stat" role="listitem"><p class="stat__number">+200</p><p class="stat__label">Clientas</p></div>
+      <div class="stat" role="listitem"><p class="stat__number">5+</p><p class="stat__label">Años exp.</p></div>
+      <div class="stat" role="listitem"><p class="stat__number">100%</p><p class="stat__label">Online</p></div>
+      <div class="stat" role="listitem"><p class="stat__number">2</p><p class="stat__label">Especialidades</p></div>
+    </div>
+  </div>
+  <div class="media-wrap">
+    <img
+      class="media-photo"
+      src="fotos/entreno-2.jpg"
+      alt="Kinga realizando sentadillas — Personal Trainer"
+      width="1258" height="1599"
+      loading="lazy"
+    />
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="testimonios" id="testimonios" aria-label="Testimonios de clientas">
+  <div class="testimonios__inner">
+    <div class="tarifas__head">
+      <h2>Lo que dicen mis clientas</h2>
+      <p>Resultados reales · Acompañamiento cercano · Cambios que duran</p>
+    </div>
+    <div class="testimonials">
+      <article class="testimonial"><p class="testimonial__text">Kinga ha transformado completamente mi relación con el ejercicio. Su método online es súper cómodo y siempre está disponible cuando la necesito.</p><p class="testimonial__author">— María G.</p></article>
+      <article class="testimonial"><p class="testimonial__text">En solo 3 meses conseguí los resultados que no había logrado en años. La motivación y el seguimiento son excepcionales.</p><p class="testimonial__author">— Laura P.</p></article>
+      <article class="testimonial"><p class="testimonial__text">Lo mejor es que el plan se adapta a mi vida real, no al revés. Kinga entiende perfectamente lo que necesitas.</p><p class="testimonial__author">— Ana M.</p></article>
+      <article class="testimonial"><p class="testimonial__text">Gracias a Kinga aprendí a comer bien de verdad. No fue una dieta, fue un cambio de vida que mantengo más de un año después.</p><p class="testimonial__author">— Sofía R.</p></article>
+      <article class="testimonial"><p class="testimonial__text">Sus planes son deliciosos y fáciles de seguir. Por fin entiendo cómo funciona mi cuerpo y qué necesita para rendir bien.</p><p class="testimonial__author">— Carmen L.</p></article>
+      <article class="testimonial"><p class="testimonial__text">Combiné su plan con el de entrenamiento y los resultados fueron increíbles. Siempre disponible y muy paciente.</p><p class="testimonial__author">— Isabel T.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- TARIFAS -->
+<section class="tarifas" id="tarifas" aria-label="Tarifas y precios">
+  <div class="tarifas__head">
+    <h2>Tarifas</h2>
+    <p>Servicios 100% online · Sin permanencia · Empieza cuando quieras</p>
+  </div>
+  <div class="tarifas__grid">
+    <article class="tarifa-card">
+      <p class="tarifa-card__num">01</p>
+      <h3 class="tarifa-card__name">Solo Entrenamiento</h3>
+      <p class="tarifa-card__desc">Plan de entrenamiento personalizado + seguimiento continuo + soporte directo</p>
+      <p class="tarifa-card__price">25€</p>
+      <p class="tarifa-card__period">al mes</p>
+      <a class="tarifa-card__cta" href="https://wa.me/34618915226?text=Hola%20Kinga%2C%20me%20interesa%20el%20plan%20de%20Entrenamiento%20(25%E2%82%AC%2Fmes)" target="_blank" rel="noopener">Empezar ahora</a>
+    </article>
+    <article class="tarifa-card tarifa-card--featured">
+      <p class="tarifa-card__num">02</p>
+      <h3 class="tarifa-card__name">Pack Completo</h3>
+      <p class="tarifa-card__desc">Entrenamiento + Nutrición · Plan integral y personalizado + seguimiento total</p>
+      <p class="tarifa-card__price">50€</p>
+      <p class="tarifa-card__period">al mes</p>
+      <a class="tarifa-card__cta" href="https://wa.me/34618915226?text=Hola%20Kinga%2C%20me%20interesa%20el%20Pack%20Completo%20(50%E2%82%AC%2Fmes)" target="_blank" rel="noopener">Empezar ahora</a>
+    </article>
+    <article class="tarifa-card">
+      <p class="tarifa-card__num">03</p>
+      <h3 class="tarifa-card__name">Solo Nutrición</h3>
+      <p class="tarifa-card__desc">Plan de alimentación personalizado + seguimiento continuo + soporte directo</p>
+      <p class="tarifa-card__price">40€</p>
+      <p class="tarifa-card__period">al mes</p>
+      <a class="tarifa-card__cta" href="https://wa.me/34618915226?text=Hola%20Kinga%2C%20me%20interesa%20el%20plan%20de%20Nutrici%C3%B3n%20(40%E2%82%AC%2Fmes)" target="_blank" rel="noopener">Empezar ahora</a>
+    </article>
+  </div>
+  <div class="discount">
+    <span class="discount__icon" aria-hidden="true">🎁</span>
+    <div>
+      <p class="discount__title">20% de descuento por referido</p>
+      <p class="discount__text">¿Conoces a alguien que quiera transformar su vida? Recomiéndame y obtén un <strong>20% de descuento</strong> en tu próxima mensualidad.</p>
+      <button class="discount__link" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Contáctame</button>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" aria-label="Llamada a la acción">
+  <h2 class="cta__title">¿Lista para empezar?</h2>
+  <p class="cta__sub">Todo online · Desde 25€/mes · Sin permanencia · Empieza hoy</p>
+  <div class="cta__buttons">
+    <a class="btn-primary" href="https://wa.me/34618915226?text=Hola%20Kinga%2C%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener">WhatsApp · Empezar ahora</a>
+    <a class="btn-outline" href="mailto:lauraconesam1@gmail.com?subject=Información%20servicios%20Kinga">Escribir por email</a>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contact" id="contacto" aria-label="Contacto">
+  <div>
+    <h2 class="contact__title">Hablemos</h2>
+    <p class="contact__intro">¿Tienes dudas sobre qué plan se adapta mejor a ti? Escríbeme sin compromiso y encontramos juntas el camino hacia tus objetivos.</p>
+    <div class="contact-links">
+      <a class="contact-link" href="https://wa.me/34618915226" target="_blank" rel="noopener">
+        <span class="contact-link__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></span>
+        WhatsApp · 618 91 52 26
+      </a>
+      <a class="contact-link" href="mailto:lauraconesam1@gmail.com">
+        <span class="contact-link__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg></span>
+        lauraconesam1@gmail.com
+      </a>
+      <a class="contact-link" href="https://instagram.com/kingaconesa" target="_blank" rel="noopener">
+        <span class="contact-link__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></span>
+        @kingaconesa · Instagram
+      </a>
+      <a class="contact-link" href="https://tiktok.com/@kingaconesa" target="_blank" rel="noopener">
+        <span class="contact-link__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.2 8.2 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg></span>
+        @kingaconesa · TikTok
+      </a>
+    </div>
+  </div>
+  <form class="contact__form" onsubmit="sendForm(event)" novalidate>
+    <div class="form-group">
+      <label class="form-label" for="name">Nombre</label>
+      <input class="form-input" type="text" id="name" name="name" placeholder="Tu nombre" required autocomplete="name"/>
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="email">Email</label>
+      <input class="form-input" type="email" id="email" name="email" placeholder="tu@email.com" required autocomplete="email"/>
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="service">¿Qué te interesa?</label>
+      <select class="form-select" id="service" name="service">
+        <option value="">— Elige un servicio —</option>
+        <option value="entrenamiento">Solo Entrenamiento · 25€/mes</option>
+        <option value="pack">Pack Completo (Entreno + Nutrición) · 50€/mes</option>
+        <option value="nutricion">Solo Nutrición · 40€/mes</option>
+        <option value="dudas">Tengo dudas, quiero asesoramiento</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="message">Tu objetivo</label>
+      <textarea class="form-textarea" id="message" name="message" placeholder="¿Qué quieres conseguir? Cuéntame..."></textarea>
+    </div>
+    <button class="btn-submit" type="submit">Enviar mensaje</button>
+    <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="footer__logo">KIN<span>G</span>A</div>
+  <div class="footer__copy">
+    <p>© <span id="year">2026</span> Kinga Conesa · Personal Trainer &amp; Nutricionista Online</p>
+  </div>
+  <p class="footer__dev">Dev by <span>Gasparetto.Developer</span></p>
+  <nav class="footer__socials" aria-label="Redes sociales">
+    <a class="footer__social" href="https://instagram.com/kingaconesa" target="_blank" rel="noopener" aria-label="Instagram de Kinga">IG</a>
+    <a class="footer__social" href="https://tiktok.com/@kingaconesa" target="_blank" rel="noopener" aria-label="TikTok de Kinga">TK</a>
+    <a class="footer__social" href="https://wa.me/34618915226" target="_blank" rel="noopener" aria-label="WhatsApp de Kinga">WA</a>
+  </nav>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a class="wa-float" href="https://wa.me/34618915226?text=Hola%20Kinga%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n" target="_blank" rel="noopener" aria-label="Contactar a Kinga por WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- JAVASCRIPT -->
+<script>
+  'use strict';
+
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('nav--scrolled', window.scrollY > 60);
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  const toggle = document.getElementById('navToggle');
+  const navList = document.getElementById('navList');
+  function closeMenu() {
+    navList.classList.remove('nav__list--open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Abrir menú');
+  }
+  toggle.addEventListener('click', () => {
+    const isOpen = navList.classList.toggle('nav__list--open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    toggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+  });
+  document.addEventListener('click', (e) => {
+    if (!nav.contains(e.target)) closeMenu();
+  });
+
+  // Sincroniza o aria-expanded de todos os gatilhos que controlam um painel.
+  function setExpanded(id, isOpen) {
+    document.querySelectorAll('[aria-controls="' + id + '"]')
+      .forEach(t => t.setAttribute('aria-expanded', String(isOpen)));
+  }
+  function openSec(id) {
+    // Colapsa INSTANTANEAMENTE qualquer outra secção aberta. Se a deixássemos
+    // fechar com animação (1.2s), ela continuaria a encolher durante o scroll e
+    // empurraria o destino para cima — aterrando no meio/fim (nas fotos) em vez
+    // do início. Desligar a transição estabiliza o layout antes de rolar.
+    document.querySelectorAll('.section-expand').forEach(p => {
+      if (p.id !== id) {
+        const wasOpen = p.classList.contains('section-expand--open');
+        if (wasOpen) p.style.transition = 'none';
+        p.style.maxHeight = '0';
+        p.classList.remove('section-expand--open');
+        p.setAttribute('inert', '');
+        setExpanded(p.id, false);
+        if (wasOpen) { p.offsetHeight; /* reflow */ p.style.transition = ''; }
+      }
+    });
+    const panel = document.getElementById(id);
+    panel.classList.add('section-expand--open');
+    panel.style.maxHeight = panel.scrollHeight + 'px';
+    panel.removeAttribute('inert');
+    setExpanded(id, true);
+    setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80);
+  }
+  function closeSec(id) {
+    const panel = document.getElementById(id);
+    panel.style.maxHeight = '0';
+    panel.classList.remove('section-expand--open');
+    panel.setAttribute('inert', '');
+    setExpanded(id, false);
+    document.getElementById('top').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  // Número de WhatsApp centralizado (usado pelo formulário).
+  const WA_NUMBER = '34618915226';
+  const formStatus = document.getElementById('formStatus');
+
+  function sendForm(e) {
+    e.preventDefault();
+    const form = e.target;
+    // Valida os campos required (nombre + email) com a UI nativa do browser.
+    if (!form.reportValidity()) return;
+
+    const data = new FormData(form);
+    const name = (data.get('name') || '').trim();
+    const email = (data.get('email') || '').trim();
+    const message = (data.get('message') || '').trim();
+    const serviceSel = form.querySelector('#service');
+    const service = serviceSel && serviceSel.selectedIndex > 0
+      ? serviceSel.options[serviceSel.selectedIndex].text
+      : '';
+
+    let text = `¡Hola Kinga! Soy ${name}.`;
+    if (service) text += `\nMe interesa: ${service}.`;
+    if (message) text += `\nMi objetivo: ${message}`;
+    if (email) text += `\nMi email: ${email}`;
+
+    const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
+    window.open(url, '_blank', 'noopener');
+
+    const btn = form.querySelector('.btn-submit');
+    const original = btn.textContent;
+    btn.textContent = '✓ Abriendo WhatsApp…';
+    btn.style.background = '#4caf82';
+    btn.disabled = true;
+    if (formStatus) formStatus.textContent = 'Te redirigimos a WhatsApp para enviar tu mensaje.';
+    setTimeout(() => {
+      btn.textContent = original;
+      btn.style.background = '';
+      btn.disabled = false;
+      form.reset();
+      if (formStatus) formStatus.textContent = '';
+    }, 4000);
+  }
+
+  // Ano do copyright sempre atualizado.
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // Botão flutuante de WhatsApp: "estaciona" logo acima do rodapé para não
+  // tapar (nem bloquear) as redes sociais — em vez de ficar fixo por cima.
+  const waFloat = document.querySelector('.wa-float');
+  const footerEl = document.querySelector('.footer');
+  if (waFloat && footerEl) {
+    const WA_MARGIN = 32; // 2rem
+    let waTicking = false;
+    function placeWaFloat() {
+      waTicking = false;
+      const footerTop = footerEl.getBoundingClientRect().top;
+      const waH = waFloat.offsetHeight;
+      if (footerTop < window.innerHeight - WA_MARGIN) {
+        // Rodapé à vista: fixa o botão imediatamente acima dele.
+        waFloat.style.position = 'absolute';
+        waFloat.style.top = (footerEl.offsetTop - waH - WA_MARGIN) + 'px';
+        waFloat.style.bottom = 'auto';
+      } else {
+        // Restante da página: comportamento flutuante normal.
+        waFloat.style.position = 'fixed';
+        waFloat.style.top = 'auto';
+        waFloat.style.bottom = WA_MARGIN + 'px';
+      }
+    }
+    function onWaScroll() {
+      if (!waTicking) { waTicking = true; requestAnimationFrame(placeWaFloat); }
+    }
+    window.addEventListener('scroll', onWaScroll, { passive: true });
+    window.addEventListener('resize', onWaScroll);
+    placeWaFloat();
+  }
+</script>
+
+</body>
+</html>
