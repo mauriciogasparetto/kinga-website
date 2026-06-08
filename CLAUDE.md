@@ -72,8 +72,10 @@ scrolls the opened one into view. When adding a similar collapsible block, repli
   `tarifa-card__price`, `about__text`, etc.
 - Keep the **no-dependencies / single-file** property unless explicitly asked to split it — it
   is the project's deliberate "production-ready" design choice.
-- This repo is **not currently a git repository.** The workflow docs describe an intended
-  git + GitHub + Vercel pipeline that has not been initialized.
+- This repo is a **git repository** on branch `main`, published at
+  `https://github.com/mauriciogasparetto/kinga-website` (public). Deploys to Vercel via the
+  GitHub integration — each `git push` to `main` triggers an automatic redeploy. `.gitignore`
+  excludes `.claude/settings.local.json` and OS/editor junk.
 
 ## Companion docs
 
