@@ -1,0 +1,22 @@
+# Normalização de quebras de linha.
+# No REPOSITÓRIO os ficheiros de texto ficam sempre com LF (padrão universal);
+# no teu checkout em Windows o Git converte para CRLF automaticamente ao abrir
+# e de volta para LF ao versionar. Isto elimina os avisos "LF will be replaced
+# by CRLF" e garante consistência entre Windows, macOS e Linux.
+* text=auto
+
+# Imagens / binários — o Git nunca deve tocar nas quebras de linha destes.
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.ico  binary
+
+# Ficheiros de texto explícitos (XML/markup/código/config)
+*.html text
+*.css  text
+*.js   text
+*.svg  text
+*.xml  text
+*.json text
+*.md   text
+*.txt  text
